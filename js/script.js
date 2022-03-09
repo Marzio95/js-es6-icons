@@ -112,3 +112,17 @@ const arrayOggettiIcone = [
 		color: 'blue'
 	}
 ];
+
+const contenitoreIcone = document.querySelector('.section');
+
+for (let index = 0; index < arrayOggettiIcone.length; index++) {
+    
+    let card = document.createElement('div');
+    card.innerHTML = 
+    `<div class="card">
+    <div><i class="${arrayOggettiIcone[index].prefix + 'solid'} ${arrayOggettiIcone[index].prefix + arrayOggettiIcone[index].name}"></i></div>
+    <div>${arrayOggettiIcone[index].name.toUpperCase()}</div>
+    </div>`
+
+    contenitoreIcone.append(card);    
+};
