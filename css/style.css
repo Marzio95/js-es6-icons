@@ -4,6 +4,7 @@
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .card{
@@ -16,4 +17,28 @@
     justify-content: center;
     background-color: white;
     border-radius: 20px;
+}
+
+nav{
+    background-color: aqua;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: aqua;
+    font-family: serif;
+}
+
+.icons{
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+label{
+    color: white;
+    font-weight: 700;
+    margin-right: 8px;
 }

@@ -133,11 +133,10 @@ function creaCarte(arrayArgomento, conteinitoreArgomento) {
     arrayArgomento.forEach(element => {
 
         let card = document.createElement('div');
+        card.classList.add('card')
         card.innerHTML =
-            `<div class="card">
-    <div style="color:${element.color}"><i class="${element.prefix + 'solid'} ${element.prefix + element.name}"></i></div>
-    <div>${element.name.toUpperCase()}</div>
-    </div>`;
+            `<div style="color:${element.color}"><i class="${element.prefix + 'solid'} ${element.prefix + element.name} icons"></i></div>
+            <div>${element.name.toUpperCase()}</div>`;
 
     conteinitoreArgomento.append(card);
 
@@ -168,5 +167,30 @@ inputTipoIcone.addEventListener('change', function () {
 });
 
 
+
+
+/*
+inputTipoIcone.addEventListener("change", function () {
+    const iconsTypeSelected = this.value;
+  
+    //console.log(iconsTypeSelected);
+  
+    if (iconsTypeSelected != "all") {
+      const filteredIcons = arrayOggettiIcone.filter((elementoArrayOggettiIcone) => {
+        if (elementoArrayOggettiIcone.type == iconsTypeSelected) {
+          return true;
+        }
+      });
+  
+      //filteredIcons
+  
+      //stampo solo l'array di icone che ho filtrato
+      insertIcons(filteredIcons, iconsContainer);
+    } else {
+      // stampo tutte le icone
+      insertIcons(icons, iconsContainer);
+    }
+  });
+  */
 
 
