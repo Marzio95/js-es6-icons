@@ -131,40 +131,68 @@ let inputTipoIcone = document.getElementById('icons')
 //CICLO FOREACH
 function creaCarte(arrayArgomento, conteinitoreArgomento) {
     arrayArgomento.forEach(element => {
+        let arrNumRand = [];
+        for (let index = 0; index < 3; index++) {
+            arrNumRand.push(getRandomArbitrary(0, 225));
+        }
+        console.log(arrNumRand);
 
+        arrayOggettiIcone.forEach((objArray) => objArray.color = `rgb(${(arrNumRand.join(','))})`);
+        console.table(arrayOggettiIcone);
+        
         let card = document.createElement('div');
         card.classList.add('card')
         card.innerHTML =
             `<div style="color:${element.color}"><i class="${element.prefix + 'solid'} ${element.prefix + element.name} icons"></i></div>
             <div>${element.name.toUpperCase()}</div>`;
 
-    conteinitoreArgomento.append(card);
+        conteinitoreArgomento.append(card);
+
+
+
 
     })
 }
 
 creaCarte(arrayOggettiIcone, contenitoreIcone);
 
-inputTipoIcone.addEventListener('change', function () { 
+inputTipoIcone.addEventListener('change', function () {
 
     contenitoreIcone.innerHTML = '';
-    
-    if (inputTipoIcone.value == 'animal'){
-        let arrayAnimali = arrayOggettiIcone.filter ((oggetto) => oggetto.type == 'animal');
+
+    if (inputTipoIcone.value == 'animal') {
+        let arrayAnimali = arrayOggettiIcone.filter((oggetto) => oggetto.type == 'animal');
         console.log(arrayAnimali);
         creaCarte(arrayAnimali, contenitoreIcone);
-    } else if  (inputTipoIcone.value == 'vegetable'){
-        let arrayVegetable = arrayOggettiIcone.filter ((oggetto) => oggetto.type == 'vegetable');
+    } else if (inputTipoIcone.value == 'vegetable') {
+        let arrayVegetable = arrayOggettiIcone.filter((oggetto) => oggetto.type == 'vegetable');
         console.log(arrayVegetable);
         creaCarte(arrayVegetable, contenitoreIcone);
-    } else if  (inputTipoIcone.value == 'user'){
-        let arrayUser = arrayOggettiIcone.filter ((oggetto) => oggetto.type == 'user');
+    } else if (inputTipoIcone.value == 'user') {
+        let arrayUser = arrayOggettiIcone.filter((oggetto) => oggetto.type == 'user');
         console.log(arrayUser);
         creaCarte(arrayUser, contenitoreIcone);
     } else {
         creaCarte(arrayOggettiIcone, contenitoreIcone);
     }
 });
+
+
+
+function getRandomArbitrary(min, max) {
+    return parseInt(Math.random() * (max - min) + min);
+}
+
+
+// let arrNumRand = [];
+// for (let index = 0; index < 3; index++) {
+//     arrNumRand.push(getRandomArbitrary(0, 225));
+// }
+// console.log(arrNumRand);
+
+// arrayOggettiIcone.forEach((objArray) => objArray.color = `rgb(${(arrNumRand.join(','))})`);
+// console.table(arrayOggettiIcone);
+
 
 
 
